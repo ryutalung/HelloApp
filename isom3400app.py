@@ -18,3 +18,5 @@ if st.button("Click me"):
   st.write("Button clicked!")
 else:
   st.write("Not clicked")
+
+st.success("Completed sucessfully")
