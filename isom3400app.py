@@ -14,9 +14,7 @@ st.write(f"Your age is {age}")
 option = st.selectbox("Choose your favorite color:", ["red", "green", "blue"])
 st.write(f"You selected: {option}")
 
-if st.button("Click me"):
-  st.write("Button clicked!")
-else:
-  st.write("Not clicked")
+if st.button("Submit"):
+  st.write("You submit your {age} and {color}!")
 
 st.success("Completed sucessfully")
