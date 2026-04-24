@@ -4,3 +4,4 @@ st.write("ISOM3400")
 
 st.header("ISOM3400")
 st.header("ISOM3400")
+st.title("This is title")
