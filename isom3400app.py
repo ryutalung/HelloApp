@@ -16,3 +16,5 @@ st.write(f"You selected: {option}")
 
 if st.button("Click me"):
   st.write("Button clicked!")
+else:
+  st.write("Not clicked")
