@@ -2,18 +2,13 @@ import streamlit as st
 st.write("ISOM3400")
 st.write("ISOM3400")
 
-st.header("This is header")
-st.title("This is title")
+st.title("Retail Business Dashboard")
+st.header("Manager Input Section")
+st.write("Please enter the monthly sales target and enter the region.")
+target = st.number_input("Enter monthly sales target (USD):", min_value = 0, value = 0)
+region = st.button("Select region:", ["East", "South", "West", "North"])
 
-st.markdown("**This is bold text**")
-st.markdown("*This is Italic*")
-
-age = st.number_input("Enter your age: ", min_value = 0, max_value = 120, value = 25) #default shows 25
-st.write(f"Your age is {age}")
-
-option = st.selectbox("Choose your favorite color:", ["red", "green", "blue"])
-st.write(f"You selected: {option}")
-
-if st.button("Submit"):
-  st.write(f"You submit your age: {age} and color: {option}!")
-  st.success("Completed sucessfully")
+if button("Submit"):
+  st.write("You submit!")
+  st.success("Complete")
+  
