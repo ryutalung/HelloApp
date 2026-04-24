@@ -15,6 +15,6 @@ option = st.selectbox("Choose your favorite color:", ["red", "green", "blue"])
 st.write(f"You selected: {option}")
 
 if st.button("Submit"):
-  st.write("You submit your {age} and {color}!")
+  st.write(f"You submit your {age} and {color}!")
 
 st.success("Completed sucessfully")
