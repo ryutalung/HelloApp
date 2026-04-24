@@ -9,6 +9,6 @@ target = st.number_input("Enter monthly sales target (USD):", min_value = 0, val
 region = st.selectbox("Select region:", ["East", "South", "West", "North"])
 
 if st.button("Submit"):
-  st.write("You submit!")
+  st.write(f"You submit! target: {target}, region: {region}.")
   st.success("Complete")
   
