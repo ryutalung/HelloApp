@@ -3,10 +3,10 @@ import sqlite3
 import pandas as pd
 from datetime import datetime
 
-# Setup database
+# Database setup - KEEP THIS OPEN, DON'T CLOSE IT
 @st.cache_resource
 def get_connection():
-    """Create and return database connection"""
+    """Create and return database connection - KEEP OPEN"""
     conn = sqlite3.connect('submissions.db', check_same_thread=False)
     c = conn.cursor()
     c.execute('''
@@ -18,11 +18,10 @@ def get_connection():
         )
     ''')
     conn.commit()
-    return conn
+    return conn  # Don't close this!
 
-# Initialize database when app starts
-conn = get_connection()
-conn.close()
+# Get the connection once at start
+conn = get_connection()  # This stays open
 
 # App UI
 st.title("Retail Business Dashboard")
@@ -39,14 +38,13 @@ region = st.selectbox("Select region:", ["East", "South", "West", "North"])
 # Submit button
 if st.button("Submit"):
     try:
-        conn = get_connection()
+        # Use the existing open connection
         c = conn.cursor()
         c.execute(
             "INSERT INTO submissions (timestamp, target, region) VALUES (?, ?, ?)",
             (datetime.now().isoformat(), target, region)
         )
         conn.commit()
-        conn.close()
         st.write(f"✅ You submitted! Target: ${target:,}, Region: {region}.")
         st.success("Complete! Data saved to database.")
     except Exception as e:
@@ -55,9 +53,8 @@ if st.button("Submit"):
 # View submissions
 if st.checkbox("Show past submissions"):
     try:
-        conn = get_connection()
+        # Use the existing open connection
         df = pd.read_sql_query("SELECT * FROM submissions ORDER BY id DESC", conn)
-        conn.close()
         
         if len(df) > 0:
             st.dataframe(df)
