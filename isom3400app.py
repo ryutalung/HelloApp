@@ -16,5 +16,4 @@ st.write(f"You selected: {option}")
 
 if st.button("Submit"):
   st.write(f"You submit your age: {age} and color: {option}!")
-
-st.success("Completed sucessfully")
+  st.success("Completed sucessfully")
