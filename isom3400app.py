@@ -12,3 +12,5 @@ if st.button("Submit"):
   st.write(f"You submit! target: {target}, region: {region}.")
   st.success("Complete")
   
+if target > 100000:
+  st.write("Great!")
