@@ -8,5 +8,5 @@ st.title("This is title")
 st.markdown("**This is bold text**")
 st.markdown("*This is Italic*")
 
-age = st.number_input("Enter your age":, min_value = 0, max_value = 120, value = 25)
+age = st.number_input("Enter your age: ", min_value = 0, max_value = 120, value = 25)
 st.write(f"Your age is {age}")
